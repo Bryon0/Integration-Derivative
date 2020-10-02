@@ -1,0 +1,6 @@
+C:\Users\admin\source\repos\TrapezoidRule\TrapezoidRule\bin\Debug\TrapezoidRule.exe.config
+C:\Users\admin\source\repos\TrapezoidRule\TrapezoidRule\bin\Debug\TrapezoidRule.exe
+C:\Users\admin\source\repos\TrapezoidRule\TrapezoidRule\bin\Debug\TrapezoidRule.pdb
+C:\Users\admin\source\repos\TrapezoidRule\TrapezoidRule\obj\Debug\TrapezoidRule.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\TrapezoidRule\TrapezoidRule\obj\Debug\TrapezoidRule.exe
+C:\Users\admin\source\repos\TrapezoidRule\TrapezoidRule\obj\Debug\TrapezoidRule.pdb
