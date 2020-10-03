@@ -27,11 +27,11 @@ namespace TrapezoidRule
             {
                 if(i == 0 || i == interval)
                 {
-                    sum += Function(x);
+                    sum += function(x);
                 }
                 else
                 {
-                    sum += 2*(Function(x));
+                    sum += 2*(function(x));
                 }
                 x += (upperLimit/(double)interval);
             }
@@ -39,9 +39,37 @@ namespace TrapezoidRule
             Console.WriteLine($"{(deltaX/2) * sum} {Environment.NewLine}");
             Console.ReadKey();
 
+            Console.WriteLine($"{TrapezoidRule(lowerLimit, upperLimit, interval, function)}");
+            Console.ReadKey();
         }
 
-        private static double Function(double x)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lowerLimit"></param>
+        /// <param name="upperLimit"></param>
+        /// <param name="interval"></param>
+        /// <param name="func"></param>
+        /// <returns></returns>
+        public static double TrapezoidRule(double lowerLimit, double upperLimit, uint interval, Func<double, double> func)
+        {
+            //Value along the x axis
+            double x = 0;
+            //Sum of the addition process
+            double sum = 0;
+
+            //Create and add up all of the trapezoids.
+            for(int i = 0; i <= interval; i++)
+            {
+                sum = (i == 0 || i == interval) ? sum += func(x) : sum += 2*func(x);
+                x += (upperLimit/(double)interval);
+            }
+
+            return (((upperLimit - lowerLimit) / (double)interval)/2) * sum;
+        }
+
+
+        private static double function(double x)
         {
             return Math.Pow(x, 2);
         }
