@@ -4,3 +4,9 @@ C:\Users\admin\source\repos\TrapezoidRule\TrapezoidRule\bin\Debug\TrapezoidRule.
 C:\Users\admin\source\repos\TrapezoidRule\TrapezoidRule\obj\Debug\TrapezoidRule.csprojAssemblyReference.cache
 C:\Users\admin\source\repos\TrapezoidRule\TrapezoidRule\obj\Debug\TrapezoidRule.exe
 C:\Users\admin\source\repos\TrapezoidRule\TrapezoidRule\obj\Debug\TrapezoidRule.pdb
+C:\Users\Bryon\source\repos\TrapezoidRule\NumericalIntegration-Trapezoid\TrapezoidRule\bin\Debug\TrapezoidRule.exe.config
+C:\Users\Bryon\source\repos\TrapezoidRule\NumericalIntegration-Trapezoid\TrapezoidRule\bin\Debug\TrapezoidRule.exe
+C:\Users\Bryon\source\repos\TrapezoidRule\NumericalIntegration-Trapezoid\TrapezoidRule\bin\Debug\TrapezoidRule.pdb
+C:\Users\Bryon\source\repos\TrapezoidRule\NumericalIntegration-Trapezoid\TrapezoidRule\obj\Debug\TrapezoidRule.csprojAssemblyReference.cache
+C:\Users\Bryon\source\repos\TrapezoidRule\NumericalIntegration-Trapezoid\TrapezoidRule\obj\Debug\TrapezoidRule.exe
+C:\Users\Bryon\source\repos\TrapezoidRule\NumericalIntegration-Trapezoid\TrapezoidRule\obj\Debug\TrapezoidRule.pdb

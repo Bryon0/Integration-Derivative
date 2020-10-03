@@ -11,21 +11,21 @@ namespace TrapezoidRule
         static void Main(string[] args)
         {
             //Finite integral
-            int a = 0;
-            int b = 10;
+            double lowerLimit = 0;
+            double upperLimit = 10;
             //Number of divisions of the integral
-            int interval = 10;
+            uint interval = 1000;
 
             //Value along the x axis
             double x = 0;
             //Sum of the addition process
             double sum = 0;
             //Delta x for the trapezoid method.
-            double deltaX = (b - a) / (double)interval; 
+            double deltaX = (upperLimit - lowerLimit) / (double)interval; 
 
-            for(int i = 0; i <= b; i++)
+            for(int i = 0; i <= interval; i++)
             {
-                if(i == 0 || i == b)
+                if(i == 0 || i == interval)
                 {
                     sum += Function(x);
                 }
@@ -33,7 +33,7 @@ namespace TrapezoidRule
                 {
                     sum += 2*(Function(x));
                 }
-                x += ((double)b/(double)interval);
+                x += (upperLimit/(double)interval);
             }
 
             Console.WriteLine($"{(deltaX/2) * sum} {Environment.NewLine}");
