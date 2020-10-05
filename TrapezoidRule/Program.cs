@@ -12,9 +12,9 @@ namespace TrapezoidRule
         {
             //Finite integral
             double lowerLimit = 0;
-            double upperLimit = 10;
+            double upperLimit = Math.PI;
             //Number of divisions of the integral
-            uint interval = 1000;
+            uint interval = 100;
 
             //Value along the x axis
             double x = 0;
@@ -36,10 +36,8 @@ namespace TrapezoidRule
                 x += (upperLimit/(double)interval);
             }
 
-            Console.WriteLine($"{(deltaX/2) * sum} {Environment.NewLine}");
-            Console.ReadKey();
-
             Console.WriteLine($"{TrapezoidRule(lowerLimit, upperLimit, interval, function)}");
+            Console.WriteLine($"{SimpsonsRule(lowerLimit, upperLimit, interval, function)}");
             Console.ReadKey();
         }
 
@@ -68,10 +66,37 @@ namespace TrapezoidRule
             return (((upperLimit - lowerLimit) / (double)interval)/2) * sum;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lowerLimit"></param>
+        /// <param name="upperLimit"></param>
+        /// <param name="interval"></param>
+        /// <param name="func"></param>
+        /// <returns></returns>
+        public static double SimpsonsRule(double lowerLimit, double upperLimit, uint interval, Func<double, double> func)
+        {
+            //Value along the x axis
+            double x = 0;
+            //Sum of the addition process
+            double sum = 0;
+
+            //Create and add up all of the trapezoids.
+            for(int i = 0; i <= interval; i++)
+            {
+                //The simpsons rule should alternate between 2 (even) and 4 (odd)
+                sum = (i == 0 || i == interval) ? sum += func(x) :  (i % 2 == 0) ?  sum += 2*func(x) : sum += 4*func(x);
+                x += (upperLimit/(double)interval);
+            }
+
+            return (((upperLimit - lowerLimit) / (double)interval)/3) * sum;
+        }
+
 
         private static double function(double x)
         {
-            return Math.Pow(x, 2);
+            //return Math.Pow(x, 2);
+            return Math.Sin(x);
         }
     }
 }
