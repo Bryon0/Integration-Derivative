@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TrapezoidRule
 {
@@ -16,28 +12,9 @@ namespace TrapezoidRule
             //Number of divisions of the integral
             uint interval = 100;
 
-            //Value along the x axis
-            double x = 0;
-            //Sum of the addition process
-            double sum = 0;
-            //Delta x for the trapezoid method.
-            double deltaX = (upperLimit - lowerLimit) / (double)interval; 
-
-            for(int i = 0; i <= interval; i++)
-            {
-                if(i == 0 || i == interval)
-                {
-                    sum += function(x);
-                }
-                else
-                {
-                    sum += 2*(function(x));
-                }
-                x += (upperLimit/(double)interval);
-            }
-
-            Console.WriteLine($"{TrapezoidRule(lowerLimit, upperLimit, interval, function)}");
-            Console.WriteLine($"{SimpsonsRule(lowerLimit, upperLimit, interval, function)}");
+            Console.WriteLine($"Trapezoid rule: {TrapezoidRule(lowerLimit, upperLimit, interval, function)}");
+            Console.WriteLine($"Simpsons rule: {SimpsonsRule(lowerLimit, upperLimit, interval, function)}");
+            Console.WriteLine($"Derivative at 1 is {Derivative(1, 0.00001, function)}");
             Console.ReadKey();
         }
 
@@ -92,11 +69,28 @@ namespace TrapezoidRule
             return (((upperLimit - lowerLimit) / (double)interval)/3) * sum;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
         private static double function(double x)
         {
             //return Math.Pow(x, 2);
-            return Math.Sin(x);
+            //return Math.Sin(x);
+            return Math.Pow(x, 2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="h"></param>
+        /// <param name="func"></param>
+        /// <returns></returns>
+        private static double Derivative(double x, double h, Func<double, double> func)
+        {
+            return (func(x + h) - func(x)) / h;
         }
     }
 }
